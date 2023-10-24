@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand align-items-start sticky-top">
+    <div class="nav-container sticky-top">
+        {% load static %}
+        <a href="/"><img src="{% static 'images/personal_logo.png' %}" alt="logo"></a>
+        <ul class="nav-items">
+            <li><a href='/'>Home</a></li>
+            <li><a href='/about'>About</a></li>
+            <li><a href='/projects'>Projects</a></li>
+            <li><a href='/contact'>Contact</a></li>
+            <li><a href='/'>Resume</a></li>
+        </ul>
+    </div>
+</nav>
+
+<style>
+
+/*Tomato Grotesk and Briti or nosereader or ppneue montreal fonts*/    
+
+/*Navigation Bar Logo*/
+
+img {
+    width: 60px;
+    display: inline-block;
+}
+
+/*Navigation Bar*/
+
+.navbar {
+    background-color: transparent;
+    width: 100%;
+    transition: all .6s;
+    padding-left: 20px;
+}
+
+/*Navigation Bar once scrolled*/
+
+.navbar-scrolled {
+    background-color: #dededefd;
+    box-shadow: 0px 3px 10px rgb(0, 0, 0, 0.3);
+}
+
+/*Navigation Bar Objects*/
+
+.navbar .nav-items{
+    display: inline-block;
+    margin-bottom: 0;
+    padding-left: 9px;
+}
+
+/*Navigation Bar Hyperlinks*/
+
+.navbar .nav-items li {
+    position: relative;
+    list-style: none;
+    display:inline-block;
+    padding: 6px;
+    font-size: 17px;
+}
+
+/*Navigation Bar Hyperlink Text*/
+
+.navbar .nav-items li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #d3d3d3;
+    text-shadow: 1px 1px 2px rgb(65, 65, 65);
+}
+
+/*Navigation Bar Text once mouse hovers over*/
+
+.navbar .nav-items li a:hover {
+    color:#374151;
+    text-shadow: 2px 2px 8px black;
+}
+</style>
+
+<script>
+    const navEl = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+    if (window.scrollY > 35) {
+        navEl.classList.add('navbar-scrolled');
+    } else if (window.scrollY <= 35) {
+        navEl.classList.remove('navbar-scrolled');
+    }
+})
+</script>
